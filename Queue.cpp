@@ -50,7 +50,7 @@ void enQueue(int item)
     }
 }
 
-//////////////////////////////////diqueue//////////////////////////////
+//////////////////////////////////dequeue//////////////////////////////
 int deQueue()
 {
     int item;
@@ -68,6 +68,7 @@ int deQueue()
     return item;
 }
 
+//////////////////////////////////display//////////////////////////////
 void display() {
     if (rear == -1)
         printf("\nQueue is Empty!!!");
@@ -80,11 +81,13 @@ void display() {
     cout << endl;
 }
 
+//////////////////////////////////emptySpace//////////////////////////////
 int emptySpace()
 {
     return Max_Size - number_Of_Element();
 }
 
+//////////////////////////////////main//////////////////////////////
     int main()
     {
         int opNum;
@@ -93,67 +96,69 @@ int emptySpace()
         {
             for (int i = 0;i < opNum;i++)
             {
-                int op;
-            cout << "Enter the opration: ";
-            cin >> op;
-            cout << endl;
-            switch (op) {
+                  int op;
+                cout << "Enter the opration: ";
+                    cin >> op;
+                    cout << endl;
+                    switch (op) {
             case 1: {
                 int element, enqueue;
-                cout << "how many element you want : ";
-                cin >> element;
-                cout << "engueue the " << element << " number :\n";
+                    cout << "how many element you want : ";
+                    cin >> element;
+                    cout << "engueue the " << element << " number :\n";
                 for (int i = 0;i < element;i++) {
-                    cin >> enqueue;
-                    enQueue(enqueue);
-                   } 
-                break;
+                        cin >> enqueue;
+                        enQueue(enqueue);
+                       } 
+                    break;
                 
             }
             case 2: {
                 cout << "how many element you want to deQueue : ";
-                int deQ;
-                cin >> deQ;
-                for (int i = 0;i < deQ;i++) {
-                    cout << deQueue() << " ";
-                }
-                cout << "deQueue element" << endl;
-                break;
-            }
+                    int deQ;
+                    cin >> deQ;
+                    for (int i = 0;i < deQ;i++) {
+                        cout << deQueue() << " ";
+                    }
+                    cout << "deQueue element" << endl;
+                    break;
+                   }
 
             case 3: {
-                if (is_Empty()) {
-                    cout << "the queue is empty \n";
-                    break;
-                }
+                  if (is_Empty()) {
+                      cout << "the queue is empty \n";
+                      break;
+                                  }
                 else {
-                    cout << "the queue is not empty \n";
-                    break;
-                }
-            }
+                      cout << "the queue is not empty \n";
+                      break;
+                     }
+                     }
             case 4: {
                 if (is_full()){
-                    cout << "the queue is full \n";
-                break;}
+                      cout << "the queue is full \n";
+                      break;
+                }
                 else{
-                    cout << "the queue is not full \n";
-                break;}
-            }
+                      cout << "the queue is not full \n";
+                      break;
+                    }
+                    }
             case 5: {
-                display();
-                break;
-            }
+                      display();
+                      break;
+                    }
             case 6: {
-                cout << "number of empty space in queue : " << emptySpace() << "\n";
-                break;
+                      cout << "number of empty space in queue : " << emptySpace() << "\n";
+                      break;
             }
             case 7: {
-                cout << "number of elements in queue : " << number_Of_Element() << endl;
-                break;
+                      cout << "number of elements in queue : " << number_Of_Element() << endl;
+                      break;
             }
             case 0: {
 
-                exit(0);
+                       exit(0);
             }
             }
         }
