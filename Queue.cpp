@@ -70,7 +70,7 @@ int deQueue()
 
 //////////////////////////////////display//////////////////////////////
 void display() {
-    if (rear == -1)
+    if (is_Empty())
         printf("\nQueue is Empty!!!");
     else {
         int i;
