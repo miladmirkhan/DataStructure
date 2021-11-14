@@ -97,7 +97,11 @@ int index(int num) {
 
 //////////////////////////////////////////////////////////////////////////////////////
 void display() {
-	cout << "the value in the stack are";
+	if (empty()) {
+		cout << "stack is empty;";
+		exit(0);
+	}
+	cout << "the value in the stack are ";
 	for (int i = top;i >= 0;i--) {
 		cout << stack[i] << " ";
 	}
@@ -210,14 +214,15 @@ int main()
 			cout << "the top element :" << topElement()<<endl;
 			break;
 		}
-		case 11:
+		case 11://repeated element
 		{
 			int repeat;
 			cout << "enter the number you want : ";
 			cin >> repeat;
 			cout << numElement(repeat) << " times the number is repeted. \n";
 		}
-		case 0: {
+		case 0: //exit
+		{
 			exit(0);
 		}
 
