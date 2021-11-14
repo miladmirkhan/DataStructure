@@ -75,7 +75,7 @@ int stackindex(int num) {
 	else
 		for (int i = top;i >= 0;i--) {
 			if (stack[i] == num)
-				return i ;
+				return i;
 		}
 }
 
@@ -101,7 +101,7 @@ void display() {
 		cout << "stack is empty;";
 		exit(0);
 	}
-	cout << "the value in the stack are ";
+	cout << "the element in the stack are ";
 	for (int i = top;i >= 0;i--) {
 		cout << stack[i] << " ";
 	}
@@ -118,12 +118,20 @@ int numElement(int item) {
 	}
 	return count;
 }
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+int space() {
+	return maxsize - numOfElement();
+
+}
+
 //////////////////////////////////////////////////////////////////////////////////////
 int main()
 {
 	int idOfOpration;int numOfCases;
 	cout << "enter the num of case(s): ";cin >> numOfCases;
-	cout << " the id of oporation: \n1:push \n 2:pop \n 3:empty \n 4:full \n 5:Number Of element \n 6:Clear the stack \n 7:find the number index \n 8: index of stack\n 9:display" << endl <<  " 10: top Element\n 11:number of repeted\n 0:exit \n";
+	cout << "\nthe id of oporation: \n1:push \n 2:pop \n 3:empty \n 4:full \n 5:Number Of element \n 6:Clear the stack \n 7:find the number index \n 8: index of stack\n 9:display" << endl << " 10: top Element\n 11:number of repeted\n 12:space number \n  0:exit \n";
 	for (int i = 0;i < numOfCases;i++) {
 
 		cout << "enter the id of oporation: ";
@@ -169,16 +177,16 @@ int main()
 		case 4://full
 		{
 			if (full()) {
-				cout << "the stack is full."<<endl;break;
+				cout << "the stack is full." << endl;break;
 			}
 			else {
-				cout << "the stack is not full."<<endl;
+				cout << "the stack is not full." << endl;
 				break;
 			}
 		}
 		case 5://numofelement
 		{
-			cout << "the number of element : " << numOfElement()<<endl;
+			cout << "the number of element : " << numOfElement() << endl;
 			break;
 		}
 
@@ -194,14 +202,14 @@ int main()
 			int ind;
 			cout << "enter a number: ";
 			cin >> ind;
-			cout << endl << "the index is :"<< stackindex(ind)<<endl;
+			cout << endl << "the index is :" << stackindex(ind) << endl;
 			break;
 		}
 		case 8://find the number
 		{
 			cout << "enter stack index\n";
 			int inde;cin >> inde;
-			cout <<"the number is : " << index(inde) << endl;
+			cout << "the number is : " << index(inde) << endl;
 			break;
 		}
 		case 9://display
@@ -211,7 +219,7 @@ int main()
 		}
 		case 10://top element
 		{
-			cout << "the top element :" << topElement()<<endl;
+			cout << "the top element :" << topElement() << endl;
 			break;
 		}
 		case 11://repeated element
@@ -221,13 +229,16 @@ int main()
 			cin >> repeat;
 			cout << numElement(repeat) << " times the number is repeted. \n";
 		}
+		case 12: {
+			cout << "the number of spaces : " << space()<<endl;
+			break;}
 		case 0: //exit
 		{
 			exit(0);
 		}
 
 		}
-		
+
 	}
 }
 
