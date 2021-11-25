@@ -56,6 +56,29 @@ list* insertAfterThisElement(list* head, int num, int afterE)
 	return head;
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+list* insertNBeforeThisElement(list* head, int num, int afterE)
+{
+	list* r = head, * temp = new list;
+
+	temp->value = num;/*we make temp value the number we want*/
+
+	while (r != NULL)
+	{
+		if (r->next->value == afterE)//fist element
+		{
+			temp->next = r->next;/*we make r is next to be  temp is next
+								 we save r is next*/
+			r->next = temp;/*temp will go after r*/
+			break;
+		}
+		r = r->next;/*to go on*/
+	}
+	return head;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
